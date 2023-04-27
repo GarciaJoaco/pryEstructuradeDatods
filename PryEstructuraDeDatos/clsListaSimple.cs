@@ -74,7 +74,7 @@ namespace PryEstructuraDeDatos
             grilla.Rows.Clear();
             while (aux != null)
             {
-                grilla.Rows.Add(aux.Codigo);
+                grilla.Rows.Add(aux.Codigo,aux.Nombre,aux.Tramite);
                 aux = aux.Siguiente;
 
             }

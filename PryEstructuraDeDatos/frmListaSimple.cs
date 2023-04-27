@@ -33,6 +33,8 @@ namespace PryEstructuraDeDatos
             txtNombre.Text = "";
             txtTramite.Text = "";
 
+            btnAgregar.Enabled = false;
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -55,7 +57,51 @@ namespace PryEstructuraDeDatos
 
         private void frmListaSimple_Load(object sender, EventArgs e)
         {
+            btnAgregar.Enabled = false;
+            
 
+        }
+        private void validar()
+        {
+            if (txtCodigo.Text != string.Empty && txtNombre.Text != string.Empty && txtTramite.Text != string.Empty)
+            {
+                btnAgregar.Enabled = true;
+            }
+            else
+            {
+                btnAgregar.Enabled = false;
+            }
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            validar();
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            validar();
+        }
+
+        private void txtTramite_TextChanged(object sender, EventArgs e)
+        {
+            validar();
+        }
+
+        private void btnEliminar_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

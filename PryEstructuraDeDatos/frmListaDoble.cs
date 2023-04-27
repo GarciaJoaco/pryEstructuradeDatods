@@ -19,25 +19,61 @@ namespace PryEstructuraDeDatos
         clslistasimple FilaDePersonas = new clslistasimple();
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (FilaDePersonas != null)
-            {
-                Int32 X = Convert.ToInt32(comboBox1.Text);
-                FilaDePersonas.ELIMINAR(X);
-                FilaDePersonas.Recorrer(dgvCola);
-                FilaDePersonas.Recorrer(ltsCola);
-                FilaDePersonas.Recorrer(comboBox1);
-
-
-            }
-            else
-            {
-
-            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            validar();
+        }
+
+        private void lblCodigo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTramite_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmListaDoble_Load(object sender, EventArgs e)
+        {
+            btnAgregar.Enabled = false;
+            btnEliminar.Enabled = false;
+            
+
+        }
+        private void validar()
+        {
+            if (txtCodigo.Text != string.Empty && txtNombre.Text != string.Empty && txtTramite.Text != string.Empty)
+            {
+                btnAgregar.Enabled = true;
+            }
+            else
+            {
+                btnAgregar.Enabled = false;
+            }
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            validar();
+
+        }
+
+        private void txtTramite_TextChanged(object sender, EventArgs e)
+        {
+            validar();
         }
     }
 }

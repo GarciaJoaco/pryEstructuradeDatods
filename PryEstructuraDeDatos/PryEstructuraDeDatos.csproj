@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsArbolVinario.cs" />
     <Compile Include="clsListaDoble.cs" />
     <Compile Include="Cola.cs" />
     <Compile Include="frmPrecentacion.cs">

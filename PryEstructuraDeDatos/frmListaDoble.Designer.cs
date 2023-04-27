@@ -217,9 +217,9 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(57, 147);
+            this.btnAgregar.Location = new System.Drawing.Point(48, 130);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(75, 40);
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -227,10 +227,11 @@
             // 
             // txtTramite
             // 
-            this.txtTramite.Location = new System.Drawing.Point(48, 118);
+            this.txtTramite.Location = new System.Drawing.Point(48, 94);
             this.txtTramite.Name = "txtTramite";
             this.txtTramite.Size = new System.Drawing.Size(100, 20);
             this.txtTramite.TabIndex = 5;
+            this.txtTramite.TextChanged += new System.EventHandler(this.txtTramite_TextChanged);
             // 
             // txtNombre
             // 
@@ -238,6 +239,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 4;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtCodigo
             // 
@@ -245,15 +247,17 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // lblTramite
             // 
             this.lblTramite.AutoSize = true;
-            this.lblTramite.Location = new System.Drawing.Point(7, 121);
+            this.lblTramite.Location = new System.Drawing.Point(7, 97);
             this.lblTramite.Name = "lblTramite";
             this.lblTramite.Size = new System.Drawing.Size(42, 13);
             this.lblTramite.TabIndex = 2;
             this.lblTramite.Text = "Tramite";
+            this.lblTramite.Click += new System.EventHandler(this.lblTramite_Click);
             // 
             // lblNombre
             // 
@@ -263,6 +267,7 @@
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre";
+            this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
             // 
             // lblCodigo
             // 
@@ -272,6 +277,7 @@
             this.lblCodigo.Size = new System.Drawing.Size(40, 13);
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Codigo";
+            this.lblCodigo.Click += new System.EventHandler(this.lblCodigo_Click);
             // 
             // frmListaDoble
             // 
@@ -286,6 +292,7 @@
             this.Controls.Add(this.gbxNuevoElemento);
             this.Name = "frmListaDoble";
             this.Text = "frmListaDoble";
+            this.Load += new System.EventHandler(this.frmListaDoble_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
