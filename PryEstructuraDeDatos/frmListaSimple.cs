@@ -16,29 +16,40 @@ namespace PryEstructuraDeDatos
         {
             InitializeComponent();
         }
-        clslistasimple list = new clslistasimple();
+        clslistasimple FilaDePersonas = new clslistasimple();
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            Nodo objNodo = new Nodo();
+            objNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
+            objNodo.Nombre = txtNombre.Text;
+            objNodo.Tramite = txtTramite.Text;
 
-            
+            FilaDePersonas.agregar(objNodo);
+            FilaDePersonas.Recorrer(comboBox1);
+            FilaDePersonas.Recorrer(dgvCola);
+            FilaDePersonas.Recorrer(ltsCola);
+            txtCodigo.Text = "";
+            txtNombre.Text = "";
+            txtTramite.Text = "";
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (list != null)
+            if (FilaDePersonas != null)
             {
                 Int32 X = Convert.ToInt32(comboBox1.Text);
-                list.ELIMINAR(X);
-                list.Recorrer(dgvCola);
-                list.Recorrer(ltsCola);
-                list.Recorrer(comboBox1);
+                FilaDePersonas.ELIMINAR(X);
+                FilaDePersonas.Recorrer(dgvCola);
+                FilaDePersonas.Recorrer(ltsCola);
+                FilaDePersonas.Recorrer(comboBox1);
 
 
             }
             else
             {
-
+                MessageBox.Show("La lista esta vacia");
             }
         }
 

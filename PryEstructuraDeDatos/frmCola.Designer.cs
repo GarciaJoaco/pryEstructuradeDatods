@@ -292,6 +292,7 @@ namespace PryEstructuraDeDatos
             this.Controls.Add(this.gbxEliminado);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gbxNuevoElemento);
+            this.DoubleBuffered = true;
             this.Name = "frmCola";
             this.Text = "Cola";
             this.Load += new System.EventHandler(this.frmCola_Load);

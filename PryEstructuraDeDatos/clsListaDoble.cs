@@ -12,10 +12,10 @@ namespace PryEstructuraDeDatos
         //delclaro campos
         private Nodo pri;
         private Nodo ult;
-        internal Nodo anterior;
+        internal Nodo anterio;
 
         //declaro las propiedades
-
+        
         public Nodo primero
         {
             get { return pri; }
@@ -166,6 +166,7 @@ namespace PryEstructuraDeDatos
                     primero = primero.Siguiente;
                     primero.anterio = null;
 
+                }
 
                 else
                 {
@@ -183,16 +184,58 @@ namespace PryEstructuraDeDatos
                             ant = aux;
                             aux = aux.Siguiente;
                         }
-                        ant.Siguiente = aux.Siguiente;
                         aux = aux.Siguiente;
+                        ant.Siguiente = aux;
                         aux.anterio = ant;
 
                     }
+
                 }
-            }
 
             }
         }
+
+
+        public void eliminar(Int32 codigo)
+        {
+            //si el dato que borro es el unico de la lista
+             if (primero.Codigo == codigo && ultimo == primero)
+             {
+                    primero = null;
+                    ultimo = null;
+             }
+             else
+                {
+                    if (primero.Codigo == codigo) //
+                    {
+                        primero = primero.Siguiente;
+                        primero.anterio = null;
+                    }
+                 else
+                 {
+                   if (ultimo.Codigo == codigo)
+                   {
+                    ultimo = ultimo.anterio;
+                    ultimo.Siguiente = null;
+                   }
+                    else
+                    {
+                     Nodo aux = primero;
+                     Nodo ant = primero;
+                     while (aux.Codigo < codigo)
+                     {
+                       ant = aux;
+                       aux = aux.Siguiente;
+                     }
+                      ant.Siguiente = aux.Siguiente;
+                      aux = aux.Siguiente;
+                      aux.anterio = ant;
+                    }
+                 }
+             }
+            
+        }
+
     }
 
 }

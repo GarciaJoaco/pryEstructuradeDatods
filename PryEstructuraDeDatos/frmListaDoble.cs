@@ -16,16 +16,16 @@ namespace PryEstructuraDeDatos
         {
             InitializeComponent();
         }
-        clslistasimple list = new clslistasimple();
+        clslistasimple FilaDePersonas = new clslistasimple();
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (list != null)
+            if (FilaDePersonas != null)
             {
                 Int32 X = Convert.ToInt32(comboBox1.Text);
-                list.ELIMINAR(X);
-                list.Recorrer(dgvCola);
-                list.Recorrer(ltsCola);
-                list.Recorrer(comboBox1);
+                FilaDePersonas.ELIMINAR(X);
+                FilaDePersonas.Recorrer(dgvCola);
+                FilaDePersonas.Recorrer(ltsCola);
+                FilaDePersonas.Recorrer(comboBox1);
 
 
             }

@@ -101,15 +101,15 @@ namespace PryEstructuraDeDatos
             }
             else
             {
-                Nodo anterioor = primero;
+                Nodo anterior = primero;
                 Nodo aux = primero;
                 while (aux.Codigo != codigo)
                 {
-                    anterioor = aux;
+                    anterior = aux;
                     aux = aux.Siguiente;
 
                 }
-                anterioor.Siguiente = aux.Siguiente;
+                anterior.Siguiente = aux.Siguiente;
 
 
 
